@@ -11,7 +11,7 @@ $routers.each do |router_path, router_apis|
         when "get"
             get "#{router_path}#{path}" do
                 content_type "application/json"
-                return cb[params]
+                return cb.call(params)
             end
         end
     end
